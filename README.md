@@ -1,6 +1,6 @@
-# ExtReact Modern TypeScript Boilerplate
+# ExtReact And Formik demo
 
-A foundation for React apps built with [ExtReact](http://docs.sencha.com/extreact/latest/index.html) components and TypeScript.
+In the home page links provided
 
 ## Quick Start
 
