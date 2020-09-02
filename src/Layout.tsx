@@ -5,6 +5,8 @@ import { medium, large } from './responsiveFormulas';
 import Home from './Home/Home';
 import About from './About/About';
 import NavMenu from './NavMenu';
+import { ExtForm } from './extForm';
+import { ExtFormik } from './extFormik';
 var REACT_VERSION:any = require('react').version
 declare var Ext:any;
 
@@ -51,7 +53,7 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
 
         return (
             <Container fullscreen layout="fit" viewport="true">
-                <TitleBar title={`ExtReactModern 7.1 TypeScript Boilerplate  - React v${REACT_VERSION}`} docked="top">
+                <TitleBar title={`Form demo`} docked="top">
                     {Ext.platformTags.phone && (
                         <Button align="left" iconCls="x-fa fa-bars" handler={this.toggleAppMenu} ripple={false}/>
                     )}
@@ -82,6 +84,8 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
                 <Switch>
                     <Route path="/" component={Home} exact/>
                     <Route path="/about" component={About}/>
+                    <Route path="/ext-form" component={ExtForm}/>
+                    <Route path="/ext-formik" component={ExtFormik}/>
                 </Switch>
             </Container>
         );
