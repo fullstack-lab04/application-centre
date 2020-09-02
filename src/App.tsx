@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Layout from './Layout';
+import { Routes } from './routes';
 
 declare var Ext:any;
 
@@ -14,7 +15,7 @@ export default function App() {
 
     return (
         <Router>
-            <Layout/>
+            <Routes/>
         </Router>
     )
     
