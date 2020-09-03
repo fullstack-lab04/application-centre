@@ -7,6 +7,7 @@ export const NavHome: React.FC = () => {
                 <li><Link to="/ext-form">ext-form</Link></li>
                 <li><Link to="/ext-formik">ext-formik</Link></li>
                 <li><Link to="/html-formik">html-formik</Link></li>
+                <li><Link to="/fieldSetIssue">FieldSet Issue</Link></li>
             </ul>
         </div>
     );
