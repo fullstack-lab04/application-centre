@@ -9,9 +9,12 @@ interface formFunctionalityProps {
 
 export const FormFunctionality: React.FC<formFunctionalityProps> = () => {
     const buttonsFieldSetStyle = { textAlign: 'center' };
-    var formObect: any;
-    const handleSubmit = () => {
-        console.log('Handle submit here', JSON.stringify(formObect));
+    var formObect :any ;
+    const handleSubmit = (btn) => {
+        
+        const values = btn.up('formpanel').getValues();
+        console.log('Handle submit here', values);
+        console.log('formobject::',formObect.getValues());
     }
     return (
         <Container
@@ -31,7 +34,7 @@ export const FormFunctionality: React.FC<formFunctionalityProps> = () => {
             }}
         >
             <FormPanel
-                ref={form => formObect = form}
+                ref={form => formObect = (formObect || form.cmp)}
                 padding={10}
                 shadow
                 defaults={{
@@ -39,14 +42,19 @@ export const FormFunctionality: React.FC<formFunctionalityProps> = () => {
                 }}
                 margin="0 0 20 0"
                 title="Using Validators"
+
             >
                 <Container html="<div>Here we use validators from <code>Ext.data.validator</code> to validate user input.</div>"/>
                 <TextField
+                name="firstVale"
+                id="firstVale"
                     required
                     label="Required Field"
                     requiredMessage="This field is required."
                 />
                 <UrlField
+                name="url"
+                id="url"
                     label="URL"
                     validators={{
                         type: 'url',
@@ -54,6 +62,8 @@ export const FormFunctionality: React.FC<formFunctionalityProps> = () => {
                     }}
                 />
                 <EmailField
+                name="email"
+                id="email"
                     label="Email"
                     validators="email"
                 />
