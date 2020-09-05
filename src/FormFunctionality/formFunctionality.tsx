@@ -9,8 +9,9 @@ interface formFunctionalityProps {
 
 export const FormFunctionality: React.FC<formFunctionalityProps> = () => {
     const buttonsFieldSetStyle = { textAlign: 'center' };
-    const handleSubmit =() => {
-        console.log('Handle submit here');
+    var formObect: any;
+    const handleSubmit = () => {
+        console.log('Handle submit here', JSON.stringify(formObect));
     }
     return (
         <Container
@@ -30,6 +31,7 @@ export const FormFunctionality: React.FC<formFunctionalityProps> = () => {
             }}
         >
             <FormPanel
+                ref={form => formObect = form}
                 padding={10}
                 shadow
                 defaults={{
