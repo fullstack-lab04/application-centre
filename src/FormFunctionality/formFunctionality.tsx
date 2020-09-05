@@ -2,12 +2,16 @@ import React from 'react';
 import {Container, Panel, FormPanel, 
     TextField, UrlField, 
     EmailField, NumberField, 
-    DatePickerField} from '@sencha/ext-react-modern';
+    DatePickerField, ExtButton, ExtFieldset} from '@sencha/ext-react-modern';
 interface formFunctionalityProps {
     
 }
 
 export const FormFunctionality: React.FC<formFunctionalityProps> = () => {
+    const buttonsFieldSetStyle = { textAlign: 'center' };
+    const handleSubmit =() => {
+        console.log('Handle submit here');
+    }
     return (
         <Container
         scrollable
@@ -106,6 +110,20 @@ export const FormFunctionality: React.FC<formFunctionalityProps> = () => {
                         fn: validateCapilization
                     }}
                 /> */}
+                <ExtFieldset
+        padding={10}
+        style={buttonsFieldSetStyle}
+        margin={'0 0 5 0'}
+    >
+                <ExtButton
+            text="CANCEL" 
+            margin={'0 0 0 10'}/>
+        <ExtButton
+            ui="action raised"
+            text="SUBMIT" 
+            margin={'0 20 0 0'}
+            handler={handleSubmit}/>
+            </ExtFieldset>
             </FormPanel>
             <FormPanel
                 padding={10}
